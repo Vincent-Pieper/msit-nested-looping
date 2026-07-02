@@ -26,11 +26,6 @@ def print_triangle(n):
     print_matrix(matrix)
 
 
-print_triangle(n=20)
-
-
-
-
 def prevent_mult_by_zero(row, column):
     if row == 0:
         row = 1
@@ -60,4 +55,21 @@ def print_multiplication_table(n):
                 #  row, column = prevent_mult_by_zero(row, column) - not needed anymore
                 adjust_spacing_and_print(n, print_number=row * column)
 
-print_multiplication_table(n=20)
+
+def main():
+    while True:
+        print()
+        n = int(input(("Please enter a number: ")))
+        if n == -1:
+            print("Bye!")
+            break
+        command = input("Please enter a command (triangle/mp): ")
+        print()
+        if command == "triangle":
+            print_triangle(n)
+        elif command == "mp":
+            print_multiplication_table(n)
+
+
+if __name__ == "__main__":
+    main()
